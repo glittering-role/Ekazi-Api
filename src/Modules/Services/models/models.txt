@@ -1,0 +1,30 @@
+# . 
+
+   paranoid: true:
+
+   Enables Sequelize's built-in soft delete functionality.
+
+   Automatically adds a deleted_at column to the table.
+
+   Filters out soft-deleted records from queries by default.
+
+
+        Soft Delete a Service.
+           " await service.destroy(); "
+        Restore a Soft-Deleted Service
+           " await service.restore(); "
+        Fetch All Services (Excluding Soft-Deleted)
+           "  return await Service.findAll(); " 
+        Fetch All Services (Including Soft-Deleted)
+            " return await Service.findAll({ paranoid: false }); "
+        Permanently Delete a Service
+            "const permanentlyDeleteService = async (serviceId: string) => {
+                const service = await Service.findByPk(serviceId, { paranoid: false }); // Include soft-deleted records
+                    if (!service) {
+                     throw new Error('Service not found');
+                    }
+
+                      // Permanently delete the service
+                    await service.destroy({ force: true }); // Force delete bypasses soft delete
+                  return service;
+               };

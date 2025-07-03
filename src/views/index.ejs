@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to <%= serverName %></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url('<%= backgroundImage %>') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+    }
+
+    .welcome-container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+      max-width: 900px;
+      animation: slideIn 1.5s ease-out;
+    }
+
+    .welcome-text {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .welcome-image {
+      flex: 1;
+      background: url('<%= image %>') center/cover no-repeat;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .action-button {
+      padding: 12px 25px;
+      background-color: #3498db;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .action-button:hover {
+      background-color: #2980b9;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-container">
+    <div class="welcome-text">
+      <h1>Welcome to <%= serverName %></h1>
+      <p>Your gateway to a seamless and secure experience.</p>
+      <button class="action-button" onclick="location.href='<%= apiDocsUrl %>'">Get Started</button>
+    </div>
+    <div class="welcome-image"></div>
+  </div>
+</body>
+</html>

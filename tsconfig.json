@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "es2016",                            /* Set the JavaScript language version for emitted JavaScript */
+    "module": "commonjs",                          /* Specify the module code generation */
+    "baseUrl": "./",                               /* Base directory to resolve non-relative module names */
+
+    /* Paths */
+//    "paths": {
+//      "@/*": ["src/*"]                            /* Resolve '@' as an alias for 'src' directory */
+//    },
+
+    /* JavaScript Support */
+    "esModuleInterop": true,                       /* Allow compatibility with CommonJS modules */
+    "forceConsistentCasingInFileNames": true,      /* Ensure consistent casing for file imports */
+
+    /* Type Checking */
+    "strict": true,                                /* Enable all strict type-checking options */
+
+    /* Emit */
+    "outDir": "dist",                              /* Specify output folder for compiled files */
+
+
+    /* Completeness */
+    "skipLibCheck": true                           /* Skip checking library files */
+  },
+}
+
